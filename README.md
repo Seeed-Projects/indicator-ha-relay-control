@@ -1,4 +1,4 @@
-# Home Assistant & SenseCAP Indicator
+# Home Assistant & SenseCAP Indicator & 2-channle relay
 
 <p align="left">
   <a href="https://docs.espressif.com/projects/esp-idf/en/release-v5.1/esp32/">
@@ -21,127 +21,40 @@ The wiki for `MQTT` method is provided: [SenseCAP Indicator - Home Assistant App
 - [x] Home Assistant data - Display Sensor data
 - [x] Home Assistant control - the control widgets
 
-Add the following to your "configuration.yaml" file
-```
-# Example configuration.yaml entry
-mqtt:
-  sensor:
-    - unique_id: indicator_temperature
-      name: "Indicator Temperature"
-      state_topic: "indicator/sensor"
-      suggested_display_precision: 1
-      unit_of_measurement: "°C"
-      value_template: "{{ value_json.temp }}"
-    - unique_id: indicator_humidity
-      name: "Indicator Humidity"
-      state_topic: "indicator/sensor"
-      unit_of_measurement: "%"
-      value_template: "{{ value_json.humidity }}"
-    - unique_id: indicator_co2
-      name: "Indicator CO2"
-      state_topic: "indicator/sensor"
-      unit_of_measurement: "ppm"
-      value_template: "{{ value_json.co2 }}"
-    - unique_id: indicator_tvoc
-      name: "Indicator tVOC"
-      state_topic: "indicator/sensor"
-      unit_of_measurement: ""
-      value_template: "{{ value_json.tvoc }}"
-  switch:
-    - unique_id: indicator_switch1
-      name: "Indicator Switch1"
-      state_topic: "indicator/switch/state"
-      command_topic: "indicator/switch/set"
-      value_template: "{{ value_json.switch1 }}"
-      payload_on: '{"switch1":1}'
-      payload_off: '{"switch1":0}'
-      state_on: 1
-      state_off: 0
-    - unique_id: indicator_switch2
-      name: "Indicator Switch2"
-      state_topic: "indicator/switch/state"
-      command_topic: "indicator/switch/set"
-      value_template: "{{ value_json.switch2 }}"
-      payload_on: '{"switch2":1}'
-      payload_off: '{"switch2":0}'
-      state_on: 1
-      state_off: 0
-    - unique_id: indicator_switch3
-      name: "Indicator Switch3"
-      state_topic: "indicator/switch/state"
-      command_topic: "indicator/switch/set"
-      value_template: "{{ value_json.switch3 }}"
-      payload_on: '{"switch3":1}'
-      payload_off: '{"switch3":0}'
-      state_on: 1
-      state_off: 0
-    - unique_id: indicator_switch4
-      name: "Indicator Switch4"
-      state_topic: "indicator/switch/state"
-      command_topic: "indicator/switch/set"
-      value_template: "{{ value_json.switch4 }}"
-      payload_on: '{"switch4":1}'
-      payload_off: '{"switch4":0}'
-      state_on: 1
-      state_off: 0
-    - unique_id: indicator_switch6
-      name: "Indicator Switch6"
-      state_topic: "indicator/switch/state"
-      command_topic: "indicator/switch/set"
-      value_template: "{{ value_json.switch6 }}"
-      payload_on: '{"switch6":1}'
-      payload_off: '{"switch6":0}'
-      state_on: 1
-      state_off: 0
-    - unique_id: indicator_switch7
-      name: "Indicator Switch7"
-      state_topic: "indicator/switch/state"
-      command_topic: "indicator/switch/set"
-      value_template: "{{ value_json.switch7 }}"
-      payload_on: '{"switch7":1}'
-      payload_off: '{"switch7":0}'
-      state_on: 1
-      state_off: 0
-  number:
-    - unique_id: indicator_switch5
-      name: "Indicator Switch5"
-      state_topic: "indicator/switch/state"
-      command_topic: "indicator/switch/set"
-      command_template: '{"switch5": {{ value }} }'
-      value_template: "{{ value_json.switch5 }}"
-    - unique_id: indicator_switch8
-      name: "Indicator Switch8"
-      state_topic: "indicator/switch/state"
-      command_topic: "indicator/switch/set"
-      command_template: '{"switch8": {{ value }} }'
-      value_template: "{{ value_json.switch8 }}"
-```
-
 Add the following to the raw configuration editor of the dashboard.
 
-```
+```yaml
 views:
-  - title: Indicator device
-    icon: ''
-    badges: []
+  - path: default_view
+    title: Home
     cards:
-      - graph: line
-        type: sensor
+      - type: entities
+        entities:
+          - switch.seeedstudio_relay_f746b8_relay_1_control
+          - switch.seeedstudio_relay_f746b8_relay_2_control
+          - sensor.seeedstudio_relay_f746b8_socket_current
+          - sensor.seeedstudio_relay_f746b8_socket_energy
+          - sensor.seeedstudio_relay_f746b8_socket_frequency
+          - sensor.seeedstudio_relay_f746b8_socket_power
+          - sensor.seeedstudio_relay_f746b8_socket_voltage
+        title: Bedroom
+      - type: sensor
+        graph: line
         detail: 1
         icon: mdi:molecule-co2
         unit: ppm
         entity: sensor.indicator_co2
-      - graph: line
-        type: sensor
+      - type: sensor
+        graph: line
         entity: sensor.indicator_temperature
         detail: 1
         icon: mdi:coolant-temperature
-      - graph: line
-        type: sensor
+      - type: sensor
+        graph: line
         detail: 1
         entity: sensor.indicator_humidity
-      - graph: line
-        type: sensor
+      - type: sensor
+        graph: line
         entity: sensor.indicator_tvoc
         detail: 1
         icon: mdi:air-filter
@@ -158,7 +71,6 @@ views:
         title: Indicator control
         show_header_toggle: false
         state_color: true
-
 ```
 
 ### Configuration.yaml
@@ -269,6 +181,8 @@ mqtt:
 ```
 
 ### Automation.yaml
+
+`f746b8` is the mac of your device, remember to replace it with yours.
 
 ```yaml
 - id: sync_indicator_switch1_to_relay1
