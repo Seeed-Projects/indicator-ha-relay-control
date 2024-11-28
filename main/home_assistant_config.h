@@ -43,15 +43,15 @@ extern "C" {
 #define CONFIG_SENSOR_BUILDIN_TOPIC_DATA         CONFIG_TOPIC_SENSOR_DATA
 
 // sensor1
-#define CONFIG_SENSOR1_VALUE_KEY                 "temp"
-#define CONFIG_SENSOR1_UI_UNIT                   "°C"
-#define CONFIG_SENSOR1_UI_NAME                   "Temp"
+#define CONFIG_SENSOR1_VALUE_KEY                 "current"
+#define CONFIG_SENSOR1_UI_UNIT                   "A"
+#define CONFIG_SENSOR1_UI_NAME                   "Current"
 #define CONFIG_SENSOR1_TOPIC_DATA                CONFIG_TOPIC_SENSOR_DATA
 
 // sensor2
-#define CONFIG_SENSOR2_VALUE_KEY                 "humidity"
+#define CONFIG_SENSOR2_VALUE_KEY                 "energy"
 #define CONFIG_SENSOR2_UI_UNIT                   "%"
-#define CONFIG_SENSOR2_UI_NAME                   "Humidity"
+#define CONFIG_SENSOR2_UI_NAME                   "Energy"
 #define CONFIG_SENSOR2_TOPIC_DATA                CONFIG_TOPIC_SENSOR_DATA
 
 // sensor3

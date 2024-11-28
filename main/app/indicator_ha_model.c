@@ -100,36 +100,7 @@ static void ha_ctrl_cfg_save(void)
 static int mqtt_msg_handler(const char* p_topic, int topic_len, const char* p_data, int data_len)
 {
     cJSON* root = cJSON_ParseWithLength(p_data, data_len);
-    // if (root == NULL) {
-    //     ESP_LOGE(TAG, "Failed to parse JSON data");
-    //     return -1;
-    // }
 
-    // for (int i = 0; i < CONFIG_HA_SENSOR_ENTITY_NUM; i++) {
-    //     if (strncmp(p_topic, ha_sensor_entities[i].topic, topic_len) == 0) {
-    //         cJSON* cjson_item = cJSON_GetObjectItem(root, ha_sensor_entities[i].key);
-    //         if (cjson_item != NULL && cJSON_IsNumber(cjson_item)) {
-    //             struct view_data_ha_switch_data sensor_data = {.index = i, .value = cjson_item->valueint};
-    //             ESP_LOGI(TAG, "MQTT message: sensor %d is %d", i, sensor_data.value);
-    //             esp_event_post_to(view_event_handle, VIEW_EVENT_BASE, VIEW_EVENT_HA_SENSOR, &sensor_data, sizeof(sensor_data), portMAX_DELAY);
-    //             cJSON_Delete(root);
-    //             return 0;
-    //         }
-    //     }
-    // }
-
-    // for (int i = 0; i < CONFIG_HA_SWITCH_ENTITY_NUM; i++) {
-    //     if (strncmp(p_topic, ha_switch_entities[i].topic_set, topic_len) == 0) {  // The corresponding Topic then takes action
-    //         cJSON* cjson_item = cJSON_GetObjectItem(root, ha_switch_entities[i].key);
-    //         if (cjson_item != NULL && cJSON_IsNumber(cjson_item)) {
-    //             struct view_data_ha_switch_data switch_data = {.index = i, .value = cjson_item->valueint};
-    //             ESP_LOGI(TAG, "MQTT message: switch %d set to %d", i, switch_data.value);
-    //             esp_event_post_to(view_event_handle, VIEW_EVENT_BASE, VIEW_EVENT_HA_SWITCH_SET, &switch_data, sizeof(switch_data), portMAX_DELAY);
-    //             cJSON_Delete(root);
-    //             return 0;
-    //         }
-    //     }
-    // }
     if (root == NULL || root->child == NULL || root->child->string == NULL) {
         ESP_LOGE(TAG, "Invalid JSON structure");
         return -1;

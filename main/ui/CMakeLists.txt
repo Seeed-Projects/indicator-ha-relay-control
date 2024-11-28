@@ -9,15 +9,17 @@ SET(SOURCES screens/ui_screen_ha_mix.c
     components/ui_comp_hook.c
     ui_helpers.c
     ui_events.c
-    images/ui_img_ic_temp_png.c
-    images/ui_img_ic_hum_png.c
     images/ui_img_ic_switch2_on_png.c
     images/ui_img_ic_switch2_off_png.c
-    images/ui_img_ic_switch1_on_png.c
-    images/ui_img_ic_switch1_off_png.c
+    images/ui_img_current_png.c
+    images/ui_img_flash_png.c
     images/ui_img_wifi_disconet_png.c
+    images/ui_img_ic_temp_png.c
+    images/ui_img_ic_hum_png.c
     images/ui_img_ic_tvoc_png.c
     images/ui_img_ic_co2_png.c
+    images/ui_img_ic_switch1_on_png.c
+    images/ui_img_ic_switch1_off_png.c
     images/ui_img_setting_png.c
     images/ui_img_wifi_setting_png.c
     images/ui_img_display_png.c
