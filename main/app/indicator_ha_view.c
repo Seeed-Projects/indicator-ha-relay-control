@@ -197,7 +197,7 @@ static void __view_event_handler(void* handler_args, esp_event_base_t base, int3
                 char data_buf[10];
                 lv_snprintf(data_buf, sizeof(data_buf), "%s", p_data->value);
                 if (p_data->index == 0) {
-                    lv_label_set_text(ui_sensor_data_current_1, data_buf);
+                    lv_label_set_text(ui_sensor_data_power_1, data_buf);  // power 功率
                 } else {
                     lv_label_set_text(ui_sensor_data_energy_1, data_buf);
                 }

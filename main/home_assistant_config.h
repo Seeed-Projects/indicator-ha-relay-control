@@ -43,9 +43,9 @@ extern "C" {
 #define CONFIG_SENSOR_BUILDIN_TOPIC_DATA         CONFIG_TOPIC_SENSOR_DATA
 
 // sensor1
-#define CONFIG_SENSOR1_VALUE_KEY                 "current"
-#define CONFIG_SENSOR1_UI_UNIT                   "A"
-#define CONFIG_SENSOR1_UI_NAME                   "Current"
+#define CONFIG_SENSOR1_VALUE_KEY                 "power"
+#define CONFIG_SENSOR1_UI_UNIT                   "w"
+#define CONFIG_SENSOR1_UI_NAME                   "Power"
 #define CONFIG_SENSOR1_TOPIC_DATA                CONFIG_TOPIC_SENSOR_DATA
 
 // sensor2

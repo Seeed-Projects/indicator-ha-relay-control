@@ -24,7 +24,7 @@ lv_obj_t * ui_switch2_label2;
 lv_obj_t * ui_sensor5_btn1;
 lv_obj_t * ui_sensor5_logo1;
 lv_obj_t * ui_sensor5_label1;
-lv_obj_t * ui_sensor_data_current_1;
+lv_obj_t * ui_sensor_data_power_1;
 lv_obj_t * ui_sensor5_unit1;
 lv_obj_t * ui_sensor6_btn1;
 lv_obj_t * ui_sensor6_logo1;

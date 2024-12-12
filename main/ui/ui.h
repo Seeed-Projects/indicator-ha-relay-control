@@ -31,7 +31,7 @@ extern lv_obj_t * ui_switch2_label2;
 extern lv_obj_t * ui_sensor5_btn1;
 extern lv_obj_t * ui_sensor5_logo1;
 extern lv_obj_t * ui_sensor5_label1;
-extern lv_obj_t * ui_sensor_data_current_1;
+extern lv_obj_t * ui_sensor_data_power_1;
 extern lv_obj_t * ui_sensor5_unit1;
 extern lv_obj_t * ui_sensor6_btn1;
 extern lv_obj_t * ui_sensor6_logo1;
@@ -210,7 +210,7 @@ extern lv_obj_t * ui____initial_actions0;
 // IMAGES AND IMAGE SETS
 LV_IMG_DECLARE(ui_img_ic_switch2_on_png);    // assets/ic_switch2_on.png
 LV_IMG_DECLARE(ui_img_ic_switch2_off_png);    // assets/ic_switch2_off.png
-LV_IMG_DECLARE(ui_img_current_png);    // assets/current.png
+LV_IMG_DECLARE(ui_img_power_png);    // assets/power.png
 LV_IMG_DECLARE(ui_img_flash_png);    // assets/flash.png
 LV_IMG_DECLARE(ui_img_wifi_disconet_png);    // assets/wifi_disconet.png
 LV_IMG_DECLARE(ui_img_ic_temp_png);    // assets/ic_temp.png

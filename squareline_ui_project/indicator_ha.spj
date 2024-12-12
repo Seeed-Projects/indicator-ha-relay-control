@@ -1642,7 +1642,7 @@
                   {
                     "nid": 1850291121,
                     "strtype": "IMAGE/Asset",
-                    "strval": "assets/current.png",
+                    "strval": "assets/power.png",
                     "InheritedType": 5
                   },
                   {
@@ -1716,7 +1716,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Position",
                     "intarray": [
-                      0,
+                      3,
                       -5
                     ],
                     "InheritedType": 7
@@ -1799,7 +1799,7 @@
                   {
                     "nid": 73024949,
                     "strtype": "LABEL/Text",
-                    "strval": "Current",
+                    "strval": "Power",
                     "InheritedType": 10
                   },
                   {
@@ -1854,7 +1854,7 @@
                   {
                     "nid": -550533739,
                     "strtype": "OBJECT/Name",
-                    "strval": "sensor data current 1",
+                    "strval": "sensor data power 1",
                     "InheritedType": 10
                   },
                   {
@@ -1885,8 +1885,8 @@
                     "flags": 17,
                     "strtype": "OBJECT/Position",
                     "intarray": [
-                      18,
-                      84
+                      16,
+                      86
                     ],
                     "InheritedType": 7
                   },
@@ -2060,8 +2060,8 @@
                     "flags": 17,
                     "strtype": "OBJECT/Position",
                     "intarray": [
-                      141,
-                      91
+                      140,
+                      94
                     ],
                     "InheritedType": 7
                   },
@@ -2143,7 +2143,7 @@
                   {
                     "nid": -91385187,
                     "strtype": "LABEL/Text",
-                    "strval": "A",
+                    "strval": "w",
                     "InheritedType": 10
                   },
                   {
